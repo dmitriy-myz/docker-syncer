@@ -19,8 +19,7 @@ for f in $REVERSE; do
     echo "/$f" >> "$EXCLUDEFILE"
     cat lsyncd-template | sed "s/##FILENAME##/$f/g" >> /lsyncd.conf
     if [ ! -e /target/$f ]; then
-        cp -r "/source/$f" /target/
-        chown -R "$OWNER" "/target/$f"
+        rsync -av --chown "$OWNER" "/source/$f" /target/
     fi 
 done
 cat -n /lsyncd.conf
