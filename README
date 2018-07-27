@@ -1,0 +1,12 @@
+docker run \
+  --rm \
+  -td \
+  -v $(pwd):/source:delegated \
+  -v code:/target \
+  -e "EXCLUDE=.git" \
+  -e "REVERSE=node_modules|var|vendor" \
+  -e "OWNER=33:33" \
+  muzyka/fs-syncer /opt/fs-syncer/syncer.sh
+
+
+
