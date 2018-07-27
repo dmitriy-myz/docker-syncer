@@ -1,0 +1,7 @@
+sync {
+   default.rsync,
+   source = "/target/##FILENAME##",
+   target = "/source/##FILENAME##",
+}
+
+
