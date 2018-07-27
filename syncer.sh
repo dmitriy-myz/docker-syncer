@@ -25,7 +25,7 @@ for f in $REVERSE; do
 done
 cat -n /lsyncd.conf
 
-lsyncd /lsyncd.conf
+exec lsyncd /lsyncd.conf
 
 
 
